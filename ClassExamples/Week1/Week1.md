@@ -6,4 +6,6 @@ Topic
 
 Reading
 ==
-Ch 1, Appen-dices A-L
+## Ch 1
+
+## Appen-dices A-L
