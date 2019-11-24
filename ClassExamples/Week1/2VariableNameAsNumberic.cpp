@@ -1,5 +1,5 @@
 // Location
-//  64-bit systems use size_t instead of int
+// 64-bit systems use size_t instead of int
 
 #include <iostream>
 using namespace std;
