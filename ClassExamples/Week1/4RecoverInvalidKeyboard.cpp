@@ -25,7 +25,7 @@ int main () {
 		}   
 	}
 	// for program termination
-	if (count == 0) { 
+	if (count == 0) {  // zero test is important
 		cout << "No valid data entered." << endl;
 	}
 	else {
