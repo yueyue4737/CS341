@@ -7,7 +7,7 @@ using namespace std;
 class OrderedPair {
 public:
 	OrderedPair();
-	OrderedPair(double, double);
+	OrderedPair(double, double); // define two objects here
 	OrderedPair(OrderedPair&);
 	~OrderedPair();
 	void putX(double);
