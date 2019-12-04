@@ -1,15 +1,11 @@
-// Author: John Maslanka    Date:   15-Feb-2010
-// Installation: Home PC with MS Visual C++ V 6.0
-// Rework Main and Savitch mergesort example in Ch 13
-// Insert level-number procedures, comment out count procedures
+
 
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
 #include <cmath>
-//#include <ctime>
-using namespace std;
 
+using namespace std;
 
 void mergesort(int[], int, int*, int*, int*);
 void merge(int[], int, int, int*, int*, int*);
@@ -17,16 +13,12 @@ void merge(int[], int, int, int*, int*, int*);
 int main() {
 	int i, n, x[100], level = 0, ct = 0, ctif = 0;
 	int seed;
-	//cout << "Enter the number of integers to be generated: ";
 	cout << "Enter the number of integers to be entered: " << endl;
 	cin >> n;
-	//cout << "Enter the seed for srand: ";
-	//cin >> seed;
+
 	if (!cin.eof() && cin.good()) {
-		//	 srand (seed);
 		cout << "Enter each integer followed by hitting <enter> button. " << endl;
 		for (i = 0; !cin.eof() && cin.good() && i < n; ++i)
-			//		 x[i] = rand ();
 		{
 			cin >> x[i];
 		}
@@ -58,7 +50,6 @@ int main() {
 void mergesort(int data[], int n, int* lev, int* ct, int* ctif)
 {
 	int n1, n2;
-	// system ("PAUSE");
 	cout << "Entering mergesort method. ";
 	if (n > 1)
 	{
@@ -80,8 +71,8 @@ void mergesort(int data[], int n, int* lev, int* ct, int* ctif)
 		cout << "Level is " << *lev << "   n1 = " << n1 << "   n2 = " << n2 << endl;
 		merge(data, n1, n2, lev, ct, ctif);
 	}
-	else    // JM 9/11/2014
-		cout << "Initial singleton for level   " << *lev << " ---- " << data[0] << endl << endl; // JM 9/11/2014
+	else   
+		cout << "Initial singleton for level   " << *lev << " ---- " << data[0] << endl << endl;
 	--*lev;
 }
 void merge(int data[], int n1, int n2, int* lev, int* ct, int* ctif)
@@ -91,7 +82,7 @@ void merge(int data[], int n1, int n2, int* lev, int* ct, int* ctif)
 	int copied1 = 0;
 	int copied2 = 0;
 	int i;
-	++*ct;    //Increment number of entries into merge method
+	++*ct; 
 	cout << "Initial array for level   " << *lev << " ---- ";
 	for (i = 0; i < n1 + n2; ++i)
 		cout << data[i] << " ";
@@ -103,13 +94,13 @@ void merge(int data[], int n1, int n2, int* lev, int* ct, int* ctif)
 		++*ctif;
 		if (data[copied1] < (data + n1)[copied2]) {
 			temp[copied++] = data[copied1++];
-			cout << "Value " << temp[copied - 1] << " moved backwards in temp " << endl; // left element goes to temp
+			cout << "Value " << temp[copied - 1] << " moved backwards in temp " << endl;
 			for (i = 0; i < n1 + n2; ++i)
 				cout << temp[i] << " ";
 			cout << endl;
 		}
 		else {
-			temp[copied++] = (data + n1)[copied2++];  //right element goes  to temp
+			temp[copied++] = (data + n1)[copied2++]; 
 			cout << "Value " << temp[copied - 1] << " moved forward in temp " << endl;
 			for (i = 0; i < n1 + n2; ++i)
 				cout << temp[i] << " ";
@@ -119,12 +110,12 @@ void merge(int data[], int n1, int n2, int* lev, int* ct, int* ctif)
 	cout << "Exiting key while loop" << endl;
 	while (copied1 < n1) {
 		temp[copied++] = data[copied1++];
-		cout << "Fill-in value " << temp[copied - 1] << " from left-hand array segment " << endl;   // JM 9/11/2014
+		cout << "Fill-in value " << temp[copied - 1] << " from left-hand array segment " << endl;  
 	}
 	while (copied2 < n2) {
 		++*ct;
 		temp[copied++] = (data + n1)[copied2++];
-		cout << "Fill-in value " << temp[copied - 1] << " from right-hand array segment " << endl;    // JM 9/11/2014
+		cout << "Fill-in value " << temp[copied - 1] << " from right-hand array segment " << endl; 
 	}
 	for (i = 0; i < n1 + n2; ++i)
 		data[i] = temp[i];
