@@ -1,6 +1,8 @@
+// a basic class structure
+
+#include <cstdlib>
 #include <iostream>
 using namespace std;
-#include <cstdlib>
 
 class  FirstClass {
 public:
