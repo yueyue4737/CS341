@@ -1,6 +1,4 @@
-// recursiveFibonacci2.cpp CS341 Fall 2010  John Maslanka
-// This program demonstrates the development of Fibonacci numbers
-// by using recursion
+
 
 #include <iostream>
 using namespace std;
@@ -26,15 +24,10 @@ int fibonacci(int x, int& ct) {
 	++ct;
 	int output = 1;
 	if (x > -1) {
-		//cout << " x = " << x << "  ct = " << ct << endl;
 		int y, z;
-		//cout << "About to enter first fibonacci" << endl;
 		y = fibonacci(x - 1, ct);
-		//cout << "About to enter second fibonacci" << endl;
 		z = fibonacci(x - 2, ct);
 		output = y + z;
-		//cout << "y = " << y << "  z = " << z << endl;
 	}
-	//cout << "  output = " << output << "  ct = " << ct << endl;
 	return output;
 }
