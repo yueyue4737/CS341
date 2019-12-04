@@ -1,19 +1,4 @@
-// Author: John Maslanka
-// Date: 30-May-2000
-// Installation: Home PC with MS Visual C++ V 6.0
-//
-// C++ program to accept a number of integer numbers
-// from the user's primary, to use rand() the random number 
-// generator to create a list of numbers, to sort 
-// the array in ascending sequence, and to display the 
-// numbers in sorted order.
-// This program illustrates a function call with 
-// parameters passed by dereferencing using the address constant
-//  of the declared array.
-// The actual parameters are passed as addresses of array
-// elements. 
-// Timing procedures initially provided by William Baldumas
-//  were reworked by me to work with my sorting algorithms. 9/27/2016
+
 
 #include <cstdlib>
 #include <cmath>
@@ -26,13 +11,12 @@
 #include <random>
 
 using timeframe = std::chrono::microseconds;
-//using namespace std;
 
 void mergesort(int[], int);
 void merge(int[], int, int);
 
 int main ()
-{// initial work
+{
  int i, j, x[100000];
  int n, t1, t2;
  std::cout << "Enter the number of integers to be generated, " << std::endl;
@@ -41,24 +25,21 @@ int main ()
  if (!std::cin.eof() && std::cin.good() && n > 1)
 	{
 	 std::srand (0);
-	 for (i = 0; i < n; ++i)	// Edit 1/22/2016
+	 for (i = 0; i < n; ++i)	
 		x[i] = std::rand();
 	 if (n < 101) {
 		 std::cout << "Initial array is ";
 		 for (i = 0; i < n; ++i)
 			 std::cout << x[i] << " ";
-		 std::cout << std::endl; // end of initial work
+		 std::cout << std::endl; 
 		}
-	 // beginning of main work
 	 auto seed{ std::chrono::system_clock::now().time_since_epoch().count() };
-	 //std::default_random_engine gen(seed);
-	 //timeframe totalTime = (timeframe)0;
+
 	 auto begin = std::chrono::high_resolution_clock::now();
 	 mergesort(x, n);
 	 auto end = std::chrono::high_resolution_clock::now();
 	 timeframe totalTime = std::chrono::duration_cast<timeframe>(end - begin);
-	 // end of main work
-	 // final work
+
 	 std::cout << "Run Time for Merge Sort: " << totalTime.count() << " microseconds\n";
 	 if (n < 101) {
 		 std::cout << "Final array is ";
@@ -67,13 +48,13 @@ int main ()
 		 std::cout << std::endl;
 		}
 	 } 
- else	// Edit 1/22/2016
+ else	
 	{
-	 std::cout << "Invalid input" << std::endl;   // Edit 1/22/2016
+	 std::cout << "Invalid input" << std::endl; 
 	}
 std::cout << "Program terminating" << std::endl;
 return EXIT_SUCCESS;
- // end of final work
+
 }
 
 void mergesort(int data[], int n)
@@ -111,5 +92,5 @@ void merge(int data[], int n1, int n2)
 	for (i = 0; i < n1 + n2; ++i)
 		data[i] = temp[i];
 	delete[] temp;
-	// }
+	   }
 }
