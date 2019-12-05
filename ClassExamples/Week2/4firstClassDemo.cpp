@@ -1,4 +1,4 @@
-
+// Basic Structure of a class
 
 #include <iostream>
 using namespace std;
