@@ -6,9 +6,9 @@ using namespace std;
 
 class StraightLine {
 public:
-	StraightLine();
-	StraightLine(double, double, double, double); // define 4 objects here
-	~StraightLine() {}
+	StraightLine(); // default constructor
+	StraightLine(double, double, double, double); // other constructor: define 4 objects here
+	~StraightLine() {} // deconstructor
 
 	void putX1(double);
 	double getX1();
