@@ -21,9 +21,9 @@ const int MAX = 100;
 
 class Graph {
 private:
-	bool    edge[MAX][MAX];
-	int     count_of_vertices;
-	int		vflag[MAX];
+	bool    edge[MAX][MAX];  // square matrix of individual segement of trip
+	int     count_of_vertices; // number of airports
+	int		vflag[MAX]; // flags for internal states
 public:
 	Graph() { count_of_vertices = 0; }
 	int size() const { return count_of_vertices; }
@@ -39,7 +39,7 @@ public:
 	void tree_level(int, int);
 };
 
-void Graph::add_vertexes(const int nr)
+void Graph::add_vertexes(const int nr) // populate the verticies on the map
 {
 	int x, y;
 	count_of_vertices = nr;
@@ -47,7 +47,7 @@ void Graph::add_vertexes(const int nr)
 		for (y = 0; y < nr; ++y)
 			edge[x][y] = false;
 }
-void Graph::clear_vflags(int nr)
+void Graph::clear_vflags(int nr)  
 {
 	int x;
 	for (x = 0; x < nr; ++x)
@@ -65,7 +65,7 @@ int Graph::test_vflag(int nr)
 {
 	return vflag[nr];
 }
-void Graph::add_edge(int source, int target)
+void Graph::add_edge(int source, int target) // enter a flight segment
 {
 	edge[source][target] = true;
 }
@@ -73,7 +73,7 @@ bool Graph::is_edge(int source, int target) const
 {
 	return edge[source][target];
 }
-void Graph::tree_level(int x, int level)
+void Graph::tree_level(int x, int level) // recursive methods follow trips through all of their segments 
 {
 	int j, i;
 	++level;
@@ -88,13 +88,13 @@ void Graph::tree_level(int x, int level)
 				tree_level(j, level);
 		}
 	}
-	if (level == 2)
+	if (level == 2) // ???
 	{
 		clear_vflags(size());
 		++vflag[0];
 	}
 }
-int main() {
+int main() { // shrint the size of the main function
 	Graph G;
 	int i, j, nr, x;
 	cout << "Enter number of vertices (1 < nr <= 100) ";
@@ -144,7 +144,7 @@ int main() {
 		cout << endl;
 	}
 	cout << endl;
-	cout << "Directed List of Neighbor Vertexes for each Vertex"
+	cout << "Directed List of Neighbor Vertexes for each Vertex" // full trip starts here???
 		<< endl;
 	for (i = 0; i < G.size(); ++i)
 	{
@@ -164,7 +164,7 @@ int main() {
 		G.tree_level(i, 0);
 	}
 	system("PAUSE");
-	for (int h = 0; h < G.size(); ++h)
+	for (int h = 0; h < G.size(); ++h) // he has a revision after that 
 	{
 		int que[201];
 		int x = 0, y = 0;
