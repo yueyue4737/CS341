@@ -9,13 +9,13 @@ public:
 	OrderedPair();
 	OrderedPair(double, double); // define two objects here
 	OrderedPair(OrderedPair&);
-	~OrderedPair();
+	~OrderedPair(); // deconstructor
 	void putX(double);
 	double getX();
 	void putY(double);
 	double getY();
-	double distanceToOtherPoint(const OrderedPair&);
-	double slopeOfLine(const OrderedPair&);
+	double distanceToOtherPoint(const OrderedPair&); // we only need the decalaration of the data type
+	double slopeOfLine(const OrderedPair&); // const: use when you do not want to change the object/parameter
 private:
 	double x;
 	double y;
@@ -26,7 +26,7 @@ OrderedPair::OrderedPair(double a, double b)
 {
 	x = a; y = b;
 }
-OrderedPair::OrderedPair(OrderedPair& Z)
+OrderedPair::OrderedPair(OrderedPair& Z) // initializing the reference parameter, Z can calling the program
 {
 	x = Z.x; y = Z.y;
 }
