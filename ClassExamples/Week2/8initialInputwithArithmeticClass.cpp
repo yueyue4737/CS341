@@ -1,4 +1,4 @@
-
+// simplify the main: add a class named arithmetic
 
 #include <iostream>   
 using namespace std;  
