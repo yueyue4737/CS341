@@ -17,6 +17,7 @@ int main() {
 	cout << endl;
 	
 	// using indirection with the array name plus an index
+	// indirection = dereferencing
 	for (n = 0; n < 10; n++)
 		cout << " " << *(Array + n);
 	cout << endl;
