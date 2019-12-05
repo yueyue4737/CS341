@@ -5,7 +5,7 @@
 using namespace std;
 
 class  FirstClass {
-public:
+public: // how to use the variable in the private field
 	void putNr(int x) { nr = x; }
 	int    getNr() { return nr; }
 private:
