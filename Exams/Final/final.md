@@ -15,3 +15,5 @@ a big area
 <p> remember: write down the description <p>
 
 we can use the Gg in the exam
+also, bring the white textbook!!!!
+class time 2 hours: 17:00 ~ 21:00
