@@ -89,10 +89,10 @@ void Graph::tree_level(int x, int level)  // recursive methodto follow trips thr
 				tree_level(j, level); // recursion 
 		}
 	}
-	if (level == 2)
-	{
+	if (level == 2) // why to test level 2? 
+	{ // set a termination point 
 		clear_vflags(size());
-		++vflag[0];
+		++vflag[0]; // the program doesn't know when to stop
 	}
 }
 int main() {
