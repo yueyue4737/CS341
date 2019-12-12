@@ -1,13 +1,12 @@
 The Final Exam: laptop
 ====
 
-1. list
-----
+## list
 
 #### creating a bag list, put it in a sorted order immediately
 
-2. binary trees/ graphs
-----
+## binary trees/ graphs
+
 
 a big area
 #### make some small changes, to see what happens to what changes ?? keep balancing
@@ -17,3 +16,5 @@ a big area
 we can use the Gg in the exam
 also, bring the white textbook!!!!
 class time 2 hours: 17:00 ~ 21:00
+
+dynamic arrary
