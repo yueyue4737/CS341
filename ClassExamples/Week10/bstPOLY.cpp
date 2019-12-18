@@ -1,22 +1,18 @@
-// Author: John Maslanka
-// Date:   23-Jul-2002/ 4-Apr-2017
-// Installation: Home PC with MicroSoft Visual C++ V10.0
-//
-// C++ program to illustrate Binary Tree development and
-// access using a Node class to develop and query individual 
-// Nodes of the tree and a BST class to develop and query the
-// entire tree. Each node is created only when it is needed 
-// to contain a new character value entered by the user. 
-// This example uses the Data Structure technique known as 
-// Aggegation.  Also, it uses a Container class for the
-// Binary Search Tree.
-// 
-// Edit 10/27/2014   Code for AVL tree balancing. Original
-// code from Jeremy Wright.
-//
-// Edit 11/10/2014   Code to display a binary tree after 
-// Main & Savitch p 506, from Jimmy Goddard.
-
+// AVL Dynamic BTree Balancing listed below: is done at post-insertion for each
+//   new Node.
+// This BST procedure uses rotations to do AVL-balance whenever a Node is added.  
+// In order to do this in all levels of the tree, it first calculates a balance 
+// factor, and uses this to determine when to rotate Nodes of the tree.  The 
+// rotations are made so as to preserve the efficiency of navigation thru the tree. 
+// The AVL balancing technique allows us to circumvent the problem of statically
+// balancing the input (more about this later in the course) when we can rebalance 
+// the tree after each node is added. However, this procedure balances the tree
+// from the point of view of depth and so it does not always produce a perfectly
+// balanced tree. For ease of programming, nodes now keep track of their parents  
+// to facilitate the rotation procedures. 
+// Note that this AVL technique has not been tested to handle the problem of 
+// deleting a Node from a Binary Search Tree (BST).
+// see line 231
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
@@ -65,8 +61,8 @@ public:
 	BST();
 	void addNodeWrapper(string);
 	void inOrderTraverse();
-	void preOrderTraverse();
-	void postOrderTraverse();
+	void preOrderTraverse(); // modify here
+	void postOrderTraverse(); // modify here
 	int  getCount() { return count; }
 	void locateRoot(string);
 	int  balanceFactor(Node*);
@@ -91,14 +87,13 @@ void BST::addNodeWrapper(string v)
 	}
 }
 
-Node* BST::findInsertion(Node* tree, string v)
+Node* BST::findInsertion(Node* tree, string v) // modify here
 {
 	string x;
 	x = tree->getVal();
 	// The following code up to the return statement provided by Patrick Abeya 11/2/2017
 	// This code replaces the redundant code which existed in previous versions of this
 	//  program. This code is similar to the code for Polymorphism.
-	//
 	Node * (Node::*getMethod)(void) = nullptr;
 	void (Node::*putMethod)(Node *) = nullptr;
 
@@ -233,24 +228,9 @@ void BST::treeDisplay(Node* ref, int depth) {
 		treeDisplay(ref->getRH(), depth + 1);
 	}
 }
-// AVL Dynamic BTree Balancing listed below: is done at post-insertion for each
-//   new Node.
-// This BST procedure uses rotations to do AVL-balance whenever a Node is added.  
-// In order to do this in all levels of the tree, it first calculates a balance 
-// factor, and uses this to determine when to rotate Nodes of the tree.  The 
-// rotations are made so as to preserve the efficiency of navigation thru the tree. 
-// The AVL balancing technique allows us to circumvent the problem of statically
-// balancing the input (more about this later in the course) when we can rebalance 
-// the tree after each node is added. However, this procedure balances the tree
-// from the point of view of depth and so it does not always produce a perfectly
-// balanced tree. For ease of programming, nodes now keep track of their parents  
-// to facilitate the rotation procedures. 
-// Note that this AVL technique has not been tested to handle the problem of 
-// deleting a Node from a Binary Search Tree (BST).
-
 void BST::postInsertionBalance(Node* n)  //Run after every insertion of a Node 
-										 // to balance the tree.  Any imbalances can be dealt with by looking at 
-										 // the parent line to the root of the new Node as described above.
+					// to balance the tree.  Any imbalances can be dealt with by looking at 
+					// the parent line to the root of the new Node as described above.
 {
 	Node* p;
 	if (balanceFactor(n) == 2)
@@ -276,7 +256,6 @@ void BST::postInsertionBalance(Node* n)  //Run after every insertion of a Node
 		postInsertionBalance(n->getParent());
 	}
 }
-
 int BST::balanceFactor(Node* n)
 {
 	return subTreeHeight(n->getLH()) - subTreeHeight(n->getRH());
