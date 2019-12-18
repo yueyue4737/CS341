@@ -1,26 +1,14 @@
-// Author: John Maslanka    Graph5C-TD-DepthOnly.cpp
-// Date: 27-Dec-2002
-// Installation: Home PC with MicroSoft Visual C++ V6.0
-// Elementary Illustration of a Directed Graph adapted from 
-// Figures 15.2 and 15.3 in Main and Savitch, but terminal 
-// input is available. The program asks the user how many
-// vertices to enter. If the user enters 100, 
-// the vertex numbers are from 0 to 99. The user then enters the
-// edges by giving the start vertex followed by the end vertex
-// up to the product of the number of vertices times the 
-// number of vertices less 1, or you can terminate edge input  
-// with control-z. Note: FWIW an edge looping back to its first 
-// vertex is disallowed in this code.
-//
+// question: line25, 83
+// Graph5C-TD-DepthOnly.cpp
+
 // From Thomas Dattilo  11-April-2017
-//  Fix for same origin/return-point problem, which guarantees that
-//  graph which that a depth-wise traverse of a route through a multi-
-//  segment starts and ends at the same vertex will be completely 
-//  shown.
-//  Also, sets up a two-dimensional Adjacency Matrix which is
-//  produced at run-time so that it uses only the array size
-//  that is required.  
-//  This program does not cover Breadth-First Traversals.
+// Fix for same origin/return-point problem, 
+// which guarantees that graph which that a depth-wise traverse of a route 
+// through a multi-segment starts 
+// and ends at the same vertex will be completely shown.
+// Also, sets up a two-dimensional Adjacency Matrix 
+// which is produced at run-time 
+// so that it uses only the array size that is required.  
 
 #include <iostream>
 #include <cstdlib>
