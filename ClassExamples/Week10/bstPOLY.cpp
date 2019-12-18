@@ -1,5 +1,4 @@
-// AVL Dynamic BTree Balancing listed below: is done at post-insertion for each
-//   new Node.
+// AVL Dynamic BTree Balancing listed below: is done at post-insertion for each new Node.
 // This BST procedure uses rotations to do AVL-balance whenever a Node is added.  
 // In order to do this in all levels of the tree, it first calculates a balance 
 // factor, and uses this to determine when to rotate Nodes of the tree.  The 
@@ -12,7 +11,7 @@
 // to facilitate the rotation procedures. 
 // Note that this AVL technique has not been tested to handle the problem of 
 // deleting a Node from a Binary Search Tree (BST).
-// see line 231
+// see line 230
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
