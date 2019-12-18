@@ -1,22 +1,15 @@
-// Author: John Maslanka
-// Date:   23-Jul-2002/ 4-Apr-2017
-// Installation: Home PC with MicroSoft Visual C++ V10.0
-//
-// C++ program to illustrate Binary Tree development and
-// access using a Node class to develop and query individual 
-// Nodes of the tree and a BST class to develop and query the
-// entire tree. Each node is created only when it is needed 
-// to contain a new character value entered by the user. 
-// This example uses the Data Structure technique known as 
-// Aggegation.  Also, it uses a Container class for the
-// Binary Search Tree.
-// 
-// Edit 10/27/2014   Code for AVL tree balancing. Original
-// code from Jeremy Wright.
-//
-// Edit 11/10/2014   Code to display a binary tree after 
-// Main & Savitch p 506, from Jimmy Goddard.
-
+// This BST procedure uses rotations to do AVL-balance whenever a Node is added.  
+// In order to do this in all levels of the tree, it calculates a balance 
+// factor, and uses this to determine when to rotate Nodes of the tree.  The 
+// rotations are made so as to preserve the navigation of the tree. 
+// The AVL balancing technique allows us to circumvent the problem of balancing 
+// the input (more about this later in the course), when we can rebalance the 
+// tree after each node is added. However, the AVL technique consumes much 
+// overhead. For ease of programming, nodes now keep track of their parents to 
+// facilitate the rotating procedure. 
+// Note that the AVL technique does not handle the problem of deleting a Node
+// from a BST.
+// see line 212
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
@@ -33,7 +26,7 @@ private:
   Node* rh; // pointer to right-hand descendant Node
   Node* parent; //pointer to parent Node or NULL if root Node
 public: 
-	     Node () { lh = rh = parent = NULL; val = ""; }
+  Node () { lh = rh = parent = NULL; val = ""; }
   void   putVal (string v) { val = v; }
   string getVal () { return val; }
   void   putLH (Node* x) { lh = x; }
@@ -215,20 +208,10 @@ void BST::treeDisplay(Node* ref, int depth) {
     treeDisplay(ref->getRH(), depth + 1);
   }
 }
-// This BST procedure uses rotations to do AVL-balance whenever a Node is added.  
-// In order to do this in all levels of the tree, it calculates a balance 
-// factor, and uses this to determine when to rotate Nodes of the tree.  The 
-// rotations are made so as to preserve the navigation of the tree. 
-// The AVL balancing technique allows us to circumvent the problem of balancing 
-// the input (more about this later in the course), when we can rebalance the 
-// tree after each node is added. However, the AVL technique consumes much 
-// overhead. For ease of programming, nodes now keep track of their parents to 
-// facilitate the rotating procedure. 
-// Note that the AVL technique does not handle the problem of deleting a Node
-// from a BST.
+-
 void BST::postInsertionBalance(Node* n)  //Run after every insertion to 
-										 // balance the tree.  Any imbalances can be dealt with by looking at 
-										 // the parent line to root of the new Node as mentioned above.
+				         // balance the tree.  Any imbalances can be dealt with by looking at 
+					// the parent line to root of the new Node as mentioned above.
 {
 	Node* p;
 	if (balanceFactor(n) == 2)
