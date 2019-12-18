@@ -1,16 +1,16 @@
-// Author: John Maslanka
-// Date: 27-Dec-2002
-// Installation: Home PC with MicroSoft Visual C++ V6.0
-// Elementary Illustration of a Directed Graph adapted from 
-// Figures 15.2 and 15.3 in Main and Savitch, but terminal 
-// input is available. The program asks the user how many
-// vertices to enter. (MAX is 100.) If the user enters 100, 
-// the vertex numbers are from 0 to 99. The user then enters the
-// edges by giving the start vertex followed by the end vertex
-// up to the product of the number of vertices times the 
-// number of vertices less 1, or you can terminate edge input  
-// with control-z. Note: FWIW an edge looping back to its first 
-// vertex is disallowed in this code.
+// questions: line 58, line 91
+// A Directed Graph
+
+// Figures 15.2 and 15.3 in Main and Savitch, but terminal input is available. 
+
+// The program asks the user how many vertices to enter, MAX is 100. 
+// If the user enters 100, the vertex numbers are from 0 to 99. 
+
+// The user then enters the edges by giving the start vertex followed by the end vertex
+// up to the product of the number of vertices times the number of vertices less 1, 
+// or you can terminate edge input with control-z. 
+
+// Note: FWIW an edge looping back to its first vertex is disallowed in this code.
 
 #include <iostream>
 #include <cstdlib>
@@ -45,17 +45,17 @@ void Graph::add_vertexes(const int nr) // populate the verticies on the map
 	count_of_vertices = nr;
 	for (x = 0; x < nr; ++x)
 		for (y = 0; y < nr; ++y)
-			edge[x][y] = false;
+			edge[x][y] = false; // edges can only be added
 }
 void Graph::clear_vflags(int nr)  
 {
 	int x;
 	for (x = 0; x < nr; ++x)
-		vflag[x] = 0;
+		vflag[x] = 0; // target vertex starts from 0
 }
 void Graph::set_vflag(int nr)
 {
-	vflag[nr] = 1;
+	vflag[nr] = 1; // what does this mean?
 }
 void Graph::clear_vflag(int nr)
 {
