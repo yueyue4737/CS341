@@ -1,3 +1,6 @@
+Dijkstra's Algorithms
+===
+
 Adjacency Matrix
 ===
 
