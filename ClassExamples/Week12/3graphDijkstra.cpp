@@ -1,4 +1,4 @@
-//  Depth First Search: Dykstra
+//  Depth First Search: Dijkastra shortest algorithm
 
 // Note: An edge looping back to its first vertex is disallowed in this code. 
 // So, if we wish to make the starting point the same as the ending point, 
@@ -6,24 +6,22 @@
 // This will cause the graph to function as a pass-thru graph.
 
 // From Thomas Dattilo  11-April-2017
-//  Sets up a two-dimensional Adjacency Matrix which is
-//  produced at run-time so that it uses only the array size
-//  that is required. Also, it uses multiple layered occurrences 
-//  of the two dimensional array matrix to avoid the ambiguity 
-//  of the question of when to terminate the traversal of the 
-//  array when only one copy of the matrix is present in the 
-//  program's address space.
-//
-// 8/30/2019 JM This version of the program allows the user to 
-//  calculate the total distance through the graph of any given 
-//  traversal. In addition to entering the positions of the 
-//  beginning and termination of a segment, the program also 
-//  requires the user to enter the length of each segment. 
-//  Subsequently, the program calculates the traversal of the 
-//  path from one node to another for any pair of nodes which 
-//  were entered by the user. 
+// Sets up a two-dimensional Adjacency Matrix 
+// which is produced at run-time so that it uses only the array size that is required. 
+// Also, it uses multiple layered occurrences of the two dimensional array matrix 
+// to avoid the ambiguity of the question of 
+// when to terminate the traversal of the array 
+// when only one copy of the matrix is present in the program's address space.
 
-//  Note: This version of the program is named after Edsgar W.Dykstra, 
+// 8/30/2019 JM This version of the program allows the user to calculate the total distance 
+// through the graph of any given traversal. 
+// In addition to entering the positions of the beginning and termination of a segment, 
+// the program also requires the user to enter the length of each segment. 
+// Subsequently, the program calculates the traversal of the path 
+// from one node to another for any pair of nodes 
+// which were entered by the user. 
+
+// Note: This version of the program is named after Edsgar W.Dijkstra, 
 // the famous mid-twentieth-century mathematician and computer scientist 
 // who developed the initial trip-loading algorithm 
 // which produced the most advantageous order in which to place customer orders for delivery, 
