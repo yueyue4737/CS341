@@ -1,19 +1,16 @@
-// Author: John Maslanka  copyright 2002, 2019
-// Date:   23-Jul-2002
-// Installation: Home PC with MicroSoft Visual C++ V6.0
-//
+// question: line145
 // C++ program to illustrate Binary Tree development and
 // access using a Node class to develop and query individual 
-// Nodes of the tree and a BT class to develop and query the
-// entire tree. Each node is created only when it is needed 
-// to contain a new character value entered by the user. 
+
+// Nodes of the tree and a BT class to develop and query the entire tree. 
+// Each node is created only when it is needed to contain a new character value entered by the user. 
 // This example uses uses a Container class.
-//
+
 // Edit 10/21/2019 JM use inOrder traversal to display a tree.
 // Replaces Jim Goddard's pretty print of a tree from M&S p506
 
 #include <iostream>
-#include <iomanip>  // for setw
+#include <iomanip>  // for setw: Set field width; Sets the field width to be used on output operations. 
 #include <cstdlib>
 #include <string>
 using namespace std;
@@ -148,7 +145,7 @@ void BT::inOrderTraverse()
 	inOrder(root, -1);
 }
 void BT::inOrder(Node* n, int depth)
-{
+{ // in order: left, root, right
 	++depth;
 	if (n != NULL) {
 		inOrder(n->getLH(), depth);
