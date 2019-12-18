@@ -1,13 +1,12 @@
 Topic9
 ==
-##  
 
 Dijkstra's Algorithms
 ---
 
 Reading9
 ==
-## 
+
 
 Dijkstra's Algorithms
 ---
