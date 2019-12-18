@@ -1,17 +1,6 @@
-// Author: John Maslanka   Graph5C-BreadthOnlyC.cpp
-// Date: 27-Dec-2002
-// Installation: Home PC with MicroSoft Visual C++ V6.0
-// Elementary Illustration of a Directed Graph adapted from 
-// Figures 15.2 and 15.3 in Main and Savitch, but terminal 
-// input is available. The program asks the user how many
-// vertices to enter. (MAX is 100.) If the user enters 100, 
-// the vertex numbers are from 0 to 99. The user then enters the
-// edges by giving the start vertex followed by the end vertex
-// up to the product of the number of vertices times the 
-// number of vertices less 1, or you can terminate edge input  
-// with control-z. 
-// Note: FWIW an edge looping back to its first 
-// vertex is disallowed in this code.
+// question: line 73, 
+// Graph_BreadthOnly
+
 // Upgrades 5/4/2019 JM (1) Allow recovery from non-numeric 
 //   input of a vertex when producing an edge, 
 //   (2) Display adjacency matrix
@@ -81,7 +70,7 @@ void Graph::add_edge(int source, int target)
 }
 void Graph::remove_edge(int source, int target)
 {
-	edge[source][target] = false;
+	edge[source][target] = false; // the boolean value is false
 }
 bool Graph::is_edge(int source, int target) const
 {
@@ -212,8 +201,8 @@ int main() {
 		if (!cin.eof()) {
 			op = buffer[0];
 			if (op != 'E' || op != 'e')
-				switch (op)
-				{
+				switch (op) // Switch case statements are a substitute for long if statements that compare a variable to several integral values
+				{           // Use the switch statement to select one of many code blocks to be executed.
 				case 'A': case 'a':
 				{ x = G.addOrRemoveAnEdge(x, nr, 'A');
 				  cin.clear();  // Unblock next step to menu
