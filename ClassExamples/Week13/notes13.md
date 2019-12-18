@@ -1,8 +1,19 @@
+Topic9
+==
+##  
+
 Dijkstra's Algorithms
-===
+---
+
+Reading9
+==
+## 
+
+Dijkstra's Algorithms
+---
 
 Adjacency Matrix
-===
+---
 
 1. vertexes: initialize to nodes
 2. follow the textbook, not allowing to write (n,n)
