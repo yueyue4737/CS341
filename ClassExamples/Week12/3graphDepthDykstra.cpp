@@ -1,20 +1,10 @@
-// Author: John Maslanka    Graph5Dykstra.cpp  copyright 2019
-// Date: 27-Dec-2002,  4/11/2017  8/30/2019
-// Installation: Home PC with MicroSoft Visual C++ V6.0
-// Elementary Illustration of a Directed Graph adapted from 
-// Figures 15.2 and 15.3 in Main and Savitch, but terminal 
-// input is available. The program asks the user how many
-// vertices to enter. If the user enters 100, 
-// the vertex numbers are from 0 to 99. The user then enters the
-// edges by giving the start vertex followed by the end vertex
-// up to the product of the number of vertices times the 
-// number of vertices less 1, or you can terminate edge input  
-// with control-z. Note: An edge looping back to its first 
-// vertex is disallowed in this code. So, if we wish to make 
-// the starting point the same as the ending point, a separate 
-// nude number has to be assigned for each activity.  This will
-// cause the graph to function as a pass-thru graph.
-//
+//  Depth First Search: Dykstra
+
+// Note: An edge looping back to its first vertex is disallowed in this code. 
+// So, if we wish to make the starting point the same as the ending point, 
+// a separate node number has to be assigned for each activity.  
+// This will cause the graph to function as a pass-thru graph.
+
 // From Thomas Dattilo  11-April-2017
 //  Sets up a two-dimensional Adjacency Matrix which is
 //  produced at run-time so that it uses only the array size
@@ -32,13 +22,13 @@
 //  Subsequently, the program calculates the traversal of the 
 //  path from one node to another for any pair of nodes which 
 //  were entered by the user. 
-//  Note: This version of the program is named after Edsgar W.  
-//  Dykstra, the famous mid-twentieth-century mathematician and 
-//  computer scientist who developed the initial trip-loading 
-//  algorithm which produced the most advantageous order in which 
-//  to place customer orders for delivery, from last to first, in 
-//  the van of a delivery truck.
-//
+
+//  Note: This version of the program is named after Edsgar W.Dykstra, 
+// the famous mid-twentieth-century mathematician and computer scientist 
+// who developed the initial trip-loading algorithm 
+// which produced the most advantageous order in which to place customer orders for delivery, 
+// from last to first, in the van of a delivery truck.
+
 //  This program does not cover Breadth-First Traversals.
 
 #include <iostream>
